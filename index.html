@@ -1,31 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>VueJS Tutorials</title>
-    <link href="styles.css" rel="stylesheet" />
-    <script src="https://unpkg.com/vue"></script>
+    <title>vue.js-memes</title>
   </head>
   <body>
-    <div id="vue-app">
-      <!--  BAG IMAGE -->
-      <div id="bag" :class="{ burst: ended }"></div>
-
-      <!-- BAG HEALTH  -->
-      <div id="bag-health">
-        <div :style="{ width: health + '%' }"></div>
-      </div>
-
-      <!-- GAME CONTROLS  -->
-      <div id="controls">
-        <button @click="punch" v-show="!ended">Punch</button>
-        <button @click="restart">Restart</button>
-      </div>
-
-      <!-- IF GAME ENDED -->
-      <p class="endMsg" v-show="ended">You bursted the bag!</p>
-
-    </div>
-    <script src="app.js"></script>
+    <div id="app"></div>
+    <script src="/dist/build.js"></script>
   </body>
 </html>
