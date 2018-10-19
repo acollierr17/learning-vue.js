@@ -1,26 +1,31 @@
 <template>
     <div id="nerds">
         <ul>
-            <li v-for="nerd in nerds" :key="nerd" @click="nerd.show = !nerd.show">
+            <li v-for="(nerd, index) in nerds" :key="index" @click="nerd.show = !nerd.show">
                 <h2>{{ nerd.name }}</h2>
                 <h3 v-show="nerd.show">{{ nerd.speciality }}</h3>
             </li>
         </ul>
+        <button @click="deleteNerd">Delete nerd</button>>
     </div>
 </template>
 
 <script>
 export default {
+    props: {
+        nerds: {
+            type: Array,
+            required: true
+        }
+    },
     data() {
         return {
-            nerds: [
-                {name: 'Hailey', speciality: 'Vue Components', show: false},
-                {name: 'John', speciality: 'HTML Wizardry', show: false},
-                {name: 'Thomas', speciality: 'Click Events', show: false},
-                {name: 'Ellie', speciality: 'Conditionals', show: false},
-                {name: 'Jessica', speciality: 'Webpack', show: false},
-                {name: 'Dani', speciality: 'Data Diggin', show: false}
-            ]
+            
+        }
+    },
+    methods: {
+        deleteNerd: function() {
+            this.nerds.pop();
         }
     }
 }
