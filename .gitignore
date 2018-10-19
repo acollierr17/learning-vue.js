@@ -59,3 +59,9 @@ typings/
 
 # next.js build output
 .next
+
+# eslint conf
+.eslintrc.json
+
+# package-lock
+package-lock.json
